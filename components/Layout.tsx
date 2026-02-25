@@ -21,10 +21,10 @@ export const Header: React.FC<HeaderProps> = ({
   onHomeClick
 }) => {
   return (
-    <header className="bg-white border-b-4 border-ic-accent shadow-sm sticky top-0 z-40">
-      <div className="bg-ic-dark text-white text-xs py-1 px-4 flex justify-between items-center">
-        <div className="flex gap-4">
-          <span>Innovation City | Internal Services Portal</span>
+    <header className="bg-gradient-to-r from-ic-darkBg via-ic-darkBg2 to-ic-darkBg3 border-b border-ic-cyan/20 shadow-lg sticky top-0 z-40">
+      <div className="bg-gradient-to-r from-ic-darkBg to-ic-darkBg2 text-white text-xs py-2 px-4 flex justify-between items-center border-b border-ic-cyan/10">
+        <div className="flex gap-4 items-center">
+          <span className="text-ic-textMuted">Innovation City | Internal Services Portal</span>
         </div>
         <div className="flex gap-4 items-center">
           <button className="hover:underline" aria-label="Decrease font size">A-</button>
@@ -33,12 +33,12 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-3 cursor-pointer" onClick={onHomeClick}>
+        <div className="flex items-center gap-3 cursor-pointer hover:opacity-90 transition-opacity" onClick={onHomeClick}>
           {/* Innovation City Logo */}
-          <img src="https://i.postimg.cc/yYCMPK4W/image.png" alt="Innovation City Logo" className="h-10 w-auto object-contain" />
-          <div className="flex flex-col border-l-4 border-ic-accent pl-3">
-            <h1 className="text-xl font-bold text-ic-blue leading-tight">IC Portal</h1>
-            <span className="text-xs text-gray-600 font-medium uppercase tracking-wider">Employee Experience Platform</span>
+          <img src="https://i.postimg.cc/yYCMPK4W/image.png" alt="Innovation City Logo" className="h-10 w-auto object-contain filter brightness-110" />
+          <div className="flex flex-col border-l-2 border-ic-cyan pl-3">
+            <h1 className="text-xl font-bold text-ic-textWhite leading-tight">IC Portal</h1>
+            <span className="text-xs text-ic-textDim font-medium uppercase tracking-wider">Employee Experience Platform</span>
           </div>
         </div>
 
@@ -75,32 +75,32 @@ export const Header: React.FC<HeaderProps> = ({
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-ic-dark text-white py-8 mt-auto">
+    <footer className="bg-gradient-to-b from-ic-darkBg2 to-ic-darkBg text-white py-12 mt-auto border-t border-ic-cyan/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-bold text-lg mb-3">Innovation City Portal</h3>
-            <p className="text-sm text-gray-400">Internal Employee Request Management System</p>
+            <h3 className="font-bold text-lg text-ic-textWhite mb-3">Innovation City Portal</h3>
+            <p className="text-sm text-ic-textDim">Internal Employee Request Management System</p>
           </div>
           <div>
-            <h4 className="font-semibold mb-3">Quick Links</h4>
-            <ul className="text-sm text-gray-400 space-y-2">
-              <li><a href="#" className="hover:text-white transition-colors">About IC</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Accessibility</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact HR</a></li>
+            <h4 className="font-semibold text-ic-textWhite mb-3">Quick Links</h4>
+            <ul className="text-sm text-ic-textDim space-y-2">
+              <li><a href="#" className="hover:text-ic-cyan transition-colors">About IC</a></li>
+              <li><a href="#" className="hover:text-ic-cyan transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-ic-cyan transition-colors">Accessibility</a></li>
+              <li><a href="#" className="hover:text-ic-cyan transition-colors">Contact HR</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-3">Contact</h4>
-            <p className="text-sm text-gray-400">
+            <h4 className="font-semibold text-ic-textWhite mb-3">Contact</h4>
+            <p className="text-sm text-ic-textDim">
               RAK BANK ROC Office, Ground Floor,<br />
               Al Rifaa Sheikh Mohammed Bin Zayed Road,<br />
               Ras Al Khaimah #30099
             </p>
           </div>
         </div>
-        <div className="border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+        <div className="border-t border-ic-cyan/10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-ic-textDim">
           <p>&copy; {new Date().getFullYear()} Innovation City — Employee Experience Platform</p>
           <p className="mt-2 md:mt-0">All Rights Reserved.</p>
         </div>

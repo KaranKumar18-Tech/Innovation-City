@@ -34,9 +34,9 @@ export const FAQSection: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-50 py-16" id="faq">
+    <div className="bg-ic-darkBg py-16" id="faq">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-ic-dark mb-8">Frequently Asked Questions</h2>
+        <h2 className="text-3xl font-bold text-center text-ic-textWhite mb-8">Frequently Asked Questions</h2>
         <Accordion items={faqs} />
       </div>
     </div>
@@ -48,18 +48,18 @@ export const HomeView: React.FC<{ onFileRequest: () => void; onTrack: () => void
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <div className="relative bg-ic-blue text-white overflow-hidden">
+      <div className="relative bg-gradient-to-br from-ic-darkBg to-ic-darkBg2 text-white overflow-hidden min-h-[550px] md:min-h-[650px] lg:min-h-[700px] before:hidden after:hidden">
         {/* Content Container */}
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 h-full flex items-center">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-0">
 
             {/* Text Content - Aligned Left */}
-            <div className="w-full md:w-1/2 text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
+            <div className="w-full md:w-1/2 text-left md:pr-12">
+              <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight drop-shadow-lg text-ic-textWhite">
                 Your Voice. <br />
                 Our Priority.
               </h1>
-              <p className="text-xl mb-8 text-blue-100 max-w-lg drop-shadow-md leading-relaxed">
+              <p className="text-xl mb-8 text-ic-textMuted max-w-lg drop-shadow-md leading-relaxed">
                 Official Employee Request Portal of Innovation City.
                 Transparent, Efficient, and Accountable Service.
               </p>
@@ -68,43 +68,50 @@ export const HomeView: React.FC<{ onFileRequest: () => void; onTrack: () => void
                   Raise a Request
                 </Button>
                 {/* Note: Tracking now typically redirects to login if not authenticated, managed by parent */}
-                <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-ic-blue" onClick={onTrack}>
+                <Button variant="outline" size="lg" className="text-ic-textWhite border-ic-textWhite hover:bg-ic-textWhite hover:text-ic-darkBg" onClick={onTrack}>
                   Track Status
                 </Button>
               </div>
             </div>
 
-            {/* Image Content - Aligned Right */}
-            <div className="flex flex-col items-center md:items-end mt-8 md:mt-0">
-              <div className="w-full max-w-xs sm:max-w-sm md:max-w-[400px] aspect-[4/5] bg-gradient-to-br from-ic-blue/5 to-ic-blue/40 rounded-2xl shadow-lg overflow-hidden flex items-center justify-center">
-                <img
-                  src="https://i.postimg.cc/N0LXPWqK/Gemini-Generated-Image-88f0jj88f0jj88f0.png"
-                  alt="Innovation City Employee Service Portal Illustration"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
+            {/* Image Content - Aligned Right - Full Height */}
+            <div className="hidden md:block w-1/2 h-full before:hidden after:hidden">
+              <img
+                src="https://i.postimg.cc/xTDK10Bn/Innovation-city.jpg"
+                alt="Innovation City Employee Service Portal"
+                className="w-full h-full object-cover object-center before:hidden after:hidden"
+              />
             </div>
 
+          </div>
+
+          {/* Mobile Hero Image - Stacked Below */}
+          <div className="md:hidden w-full mt-12 h-80 overflow-hidden rounded-lg before:hidden after:hidden">
+            <img
+              src="https://i.postimg.cc/xTDK10Bn/Innovation-city.jpg"
+              alt="Innovation City Employee Service Portal"
+              className="w-full h-full object-cover object-center before:hidden after:hidden"
+            />
           </div>
         </div>
       </div>
 
       {/* Info Cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-30 grid grid-cols-1 md:grid-cols-3 gap-6 bg-white -mt-8 rounded-t-xl shadow-lg md:bg-transparent md:shadow-none md:mt-0">
-        <Card className="text-center py-8 border-t-4 border-ic-accent">
-          <div className="text-4xl mb-4">📝</div>
-          <h3 className="text-xl font-bold mb-2">Submit Request</h3>
-          <p className="text-gray-600 mb-4">Raise your request easily with our step-by-step process.</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-30 grid grid-cols-1 md:grid-cols-3 gap-6 bg-ic-darkBg2 -mt-8 rounded-t-xl shadow-lg md:bg-transparent md:shadow-none md:mt-0 border border-ic-darkBg4">
+        <Card className="text-center py-8 border border-ic-darkBg4 bg-ic-darkBg2 hover:shadow-lg hover:shadow-ic-cyan/20 hover:border-ic-cyan/30 transition-all">
+          <div className="text-4xl mb-4 text-ic-cyan">📝</div>
+          <h3 className="text-xl font-bold mb-2 text-ic-textWhite">Submit Request</h3>
+          <p className="text-ic-textMuted mb-4">Raise your request easily with our step-by-step process.</p>
         </Card>
-        <Card className="text-center py-8 border-t-4 border-ic-success">
-          <div className="text-4xl mb-4">🔍</div>
-          <h3 className="text-xl font-bold mb-2">Track Status</h3>
-          <p className="text-gray-600 mb-4">Get real-time updates on the progress of your request.</p>
+        <Card className="text-center py-8 border border-ic-darkBg4 bg-ic-darkBg2 hover:shadow-lg hover:shadow-ic-cyan/20 hover:border-ic-cyan/30 transition-all">
+          <div className="text-4xl mb-4 text-ic-cyan">🔍</div>
+          <h3 className="text-xl font-bold mb-2 text-ic-textWhite">Track Status</h3>
+          <p className="text-ic-textMuted mb-4">Get real-time updates on the progress of your request.</p>
         </Card>
-        <Card className="text-center py-8 border-t-4 border-ic-blue">
-          <div className="text-4xl mb-4">🤝</div>
-          <h3 className="text-xl font-bold mb-2">Resolution</h3>
-          <p className="text-gray-600 mb-4">Timely resolution by our dedicated team.</p>
+        <Card className="text-center py-8 border border-ic-darkBg4 bg-ic-darkBg2 hover:shadow-lg hover:shadow-ic-cyan/20 hover:border-ic-cyan/30 transition-all">
+          <div className="text-4xl mb-4 text-ic-cyan">🤝</div>
+          <h3 className="text-xl font-bold mb-2 text-ic-textWhite">Resolution</h3>
+          <p className="text-ic-textMuted mb-4">Timely resolution by our dedicated team.</p>
         </Card>
       </div>
 
@@ -160,36 +167,36 @@ export const EmployeeDashboard: React.FC<{
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8 bg-gradient-to-br from-ic-darkBg to-ic-darkBg2 min-h-screen">
       {/* Welcome Banner */}
-      <div className="bg-white rounded-lg shadow-sm border-l-4 border-ic-blue p-6 mb-8">
-        <h1 className="text-2xl font-bold text-ic-dark mb-1">Welcome back, {user.name}</h1>
-        <p className="text-gray-600">Here is a snapshot of your request activity.</p>
+      <div className="bg-ic-darkBg2 rounded-lg shadow-sm border-l-4 border-ic-cyan p-6 mb-8">
+        <h1 className="text-2xl font-bold text-ic-textWhite mb-1">Welcome back, {user.name}</h1>
+        <p className="text-ic-textMuted">Here is a snapshot of your request activity.</p>
       </div>
 
       {/* Key Metrics */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-        <Card className="border-t-4 border-blue-500 text-center py-6">
-          <h3 className="text-gray-500 text-xs uppercase font-bold tracking-wider mb-1">Total Requests</h3>
-          <p className="text-3xl font-bold text-ic-dark">{stats.total}</p>
+        <Card className="border-2 border-ic-darkBg4 bg-ic-darkBg2 text-center py-6 hover:border-ic-cyan/50 hover:shadow-lg hover:shadow-ic-cyan/20 transition-all">
+          <h3 className="text-ic-textMuted text-xs uppercase font-bold tracking-wider mb-1">Total Requests</h3>
+          <p className="text-3xl font-bold text-ic-textWhite">{stats.total}</p>
         </Card>
-        <Card className="border-t-4 border-yellow-500 text-center py-6">
-          <h3 className="text-gray-500 text-xs uppercase font-bold tracking-wider mb-1">Open / In Progress</h3>
-          <p className="text-3xl font-bold text-ic-dark">{stats.open}</p>
+        <Card className="border-2 border-ic-darkBg4 bg-ic-darkBg2 text-center py-6 hover:border-ic-cyan/50 hover:shadow-lg hover:shadow-ic-cyan/20 transition-all">
+          <h3 className="text-ic-textMuted text-xs uppercase font-bold tracking-wider mb-1">Open / In Progress</h3>
+          <p className="text-3xl font-bold text-ic-textWhite">{stats.open}</p>
         </Card>
-        <Card className="border-t-4 border-green-500 text-center py-6">
-          <h3 className="text-gray-500 text-xs uppercase font-bold tracking-wider mb-1">Resolved</h3>
-          <p className="text-3xl font-bold text-ic-dark">{stats.resolved}</p>
+        <Card className="border-2 border-ic-darkBg4 bg-ic-darkBg2 text-center py-6 hover:border-ic-cyan/50 hover:shadow-lg hover:shadow-ic-cyan/20 transition-all">
+          <h3 className="text-ic-textMuted text-xs uppercase font-bold tracking-wider mb-1">Resolved</h3>
+          <p className="text-3xl font-bold text-ic-textWhite">{stats.resolved}</p>
         </Card>
-        <Card className="border-t-4 border-red-500 text-center py-6">
-          <h3 className="text-gray-500 text-xs uppercase font-bold tracking-wider mb-1">Reopened</h3>
-          <p className="text-3xl font-bold text-ic-dark">{stats.reopened}</p>
+        <Card className="border-2 border-ic-darkBg4 bg-ic-darkBg2 text-center py-6 hover:border-ic-cyan/50 hover:shadow-lg hover:shadow-ic-cyan/20 transition-all">
+          <h3 className="text-ic-textMuted text-xs uppercase font-bold tracking-wider mb-1">Reopened</h3>
+          <p className="text-3xl font-bold text-ic-textWhite">{stats.reopened}</p>
         </Card>
       </div>
 
       {/* Quick Actions */}
       <div className="mb-8">
-        <h2 className="text-lg font-bold text-ic-dark mb-4">Quick Actions</h2>
+        <h2 className="text-lg font-bold text-ic-textWhite mb-4">Quick Actions</h2>
         <div className="flex flex-wrap gap-4">
           <Button onClick={() => onNavigate('file-request')}>+ Raise New Request</Button>
           <Button variant="outline" onClick={() => onNavigate('track')}>View All Requests</Button>
@@ -198,35 +205,35 @@ export const EmployeeDashboard: React.FC<{
 
       {/* Recent Requests */}
       <div>
-        <h2 className="text-lg font-bold text-ic-dark mb-4">Recent Activity</h2>
+        <h2 className="text-lg font-bold text-ic-textWhite mb-4">Recent Activity</h2>
         {requests.length === 0 ? (
-          <Card className="text-center py-10 bg-gray-50 border-dashed border-2 border-gray-300">
-            <p className="text-gray-500 mb-4">You have not raised any requests yet.</p>
+          <Card className="text-center py-10 bg-ic-darkBg2 border-dashed border-2 border-ic-darkBg4">
+            <p className="text-ic-textMuted mb-4">You have not raised any requests yet.</p>
             <Button variant="primary" onClick={() => onNavigate('file-request')}>Raise Your First Request</Button>
           </Card>
         ) : (
-          <div className="bg-white rounded-lg shadow overflow-hidden">
+          <div className="bg-ic-darkBg2 rounded-lg shadow overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
+              <table className="min-w-full divide-y divide-ic-darkBg3">
+                <thead className="bg-ic-darkBg3">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Request ID</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Filed</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-ic-textMuted uppercase tracking-wider">Request ID</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-ic-textMuted uppercase tracking-wider">Subject</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-ic-textMuted uppercase tracking-wider">Date Filed</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-ic-textMuted uppercase tracking-wider">Status</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-ic-textMuted uppercase tracking-wider">Action</th>
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody className="bg-ic-darkBg2 divide-y divide-ic-darkBg3">
                   {requests.slice(0, 5).map(g => (
-                    <tr key={g.id} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-ic-blue">{g.id}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 max-w-xs truncate" title={g.subject}>{g.subject}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{new Date(g.dateFiled).toLocaleDateString()}</td>
+                    <tr key={g.id} className="hover:bg-ic-darkBg3 transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-ic-cyan">{g.id}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-ic-textWhite max-w-xs truncate" title={g.subject}>{g.subject}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-ic-textMuted">{new Date(g.dateFiled).toLocaleDateString()}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm">{getStatusBadge(g.status)}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-ic-textMuted">
                         <button
-                          className="text-ic-blue hover:text-blue-800 font-medium"
+                          className="text-ic-cyan hover:text-ic-cyanLight font-medium"
                           onClick={() => onNavigate('request-details', g)}
                         >
                           View
@@ -238,8 +245,8 @@ export const EmployeeDashboard: React.FC<{
               </table>
             </div>
             {requests.length > 5 && (
-              <div className="px-6 py-3 bg-gray-50 border-t border-gray-200 text-right">
-                <button className="text-sm text-ic-blue hover:underline" onClick={() => onNavigate('track')}>View all records &rarr;</button>
+              <div className="px-6 py-3 bg-ic-darkBg3 border-t border-ic-darkBg4 text-right">
+                <button className="text-sm text-ic-cyan hover:text-ic-cyanLight" onClick={() => onNavigate('track')}>View all records &rarr;</button>
               </div>
             )}
           </div>
@@ -463,7 +470,7 @@ export const ICAssist: React.FC<{
         {!isOpen && (
           <button
             onClick={() => setIsOpen(true)}
-            className="bg-ic-blue text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all flex items-center gap-2 group"
+            className="rounded-full bg-ic-cyan text-ic-darkBg p-4 shadow-lg shadow-ic-cyan/40 hover:bg-ic-cyanLight hover:shadow-xl transition-all flex items-center gap-2 group"
             aria-label="Open Chatbot Assistant"
           >
             <span className="hidden group-hover:inline-block font-medium pr-1 whitespace-nowrap">Need help? Ask IC Assist</span>
@@ -474,32 +481,32 @@ export const ICAssist: React.FC<{
 
       {/* Chat Panel */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-80 md:w-96 bg-white rounded-xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden transition-all max-h-[600px] h-[80vh]">
+        <div className="fixed bottom-6 right-6 z-50 w-80 md:w-96 bg-ic-darkBg2 rounded-xl shadow-2xl border border-ic-darkBg4 flex flex-col overflow-hidden transition-all max-h-[600px] h-[80vh]">
           {/* Header */}
-          <div className="bg-ic-blue text-white p-4 flex justify-between items-center shrink-0">
+          <div className="bg-ic-darkBg3 text-ic-textWhite p-4 flex justify-between items-center shrink-0 border-b border-ic-darkBg4">
             <div className="flex items-center gap-2">
-               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+               <div className="w-2 h-2 bg-ic-cyan rounded-full animate-pulse"></div>
                <h3 className="font-bold">IC Assist</h3>
             </div>
             <div className="flex gap-2">
               {mode !== 'MENU' && (
-                <button onClick={resetToMainMenu} className="text-xs bg-blue-800 hover:bg-blue-900 px-2 py-1 rounded">
+                <button onClick={resetToMainMenu} className="text-xs bg-ic-darkBg4 hover:bg-ic-darkBg2 text-ic-textWhite px-2 py-1 rounded border border-ic-darkBg4">
                   Main Menu
                 </button>
               )}
-              <button onClick={() => setIsOpen(false)} className="hover:text-gray-200 text-lg">&times;</button>
+              <button onClick={() => setIsOpen(false)} className="hover:text-ic-cyan text-lg">&times;</button>
             </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-grow overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div className="flex-grow overflow-y-auto p-4 space-y-4 bg-ic-darkBg2">
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex flex-col ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}>
                 {msg.text && (
                   <div className={`max-w-[85%] p-3 rounded-lg text-sm mb-1 ${
                     msg.sender === 'user'
-                      ? 'bg-ic-blue text-white rounded-br-none'
-                      : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm whitespace-pre-line'
+                      ? 'bg-ic-cyan/20 text-ic-textWhite rounded-br-none'
+                      : 'bg-ic-darkBg3 border border-ic-darkBg4 text-ic-textMuted rounded-bl-none shadow-sm whitespace-pre-line'
                   }`}>
                     {msg.text}
                   </div>
@@ -511,7 +518,7 @@ export const ICAssist: React.FC<{
                       <button
                         key={optIdx}
                         onClick={opt.action}
-                        className="bg-white border border-ic-blue text-ic-blue hover:bg-blue-50 text-sm font-medium py-2 px-3 rounded-lg text-left shadow-sm transition-colors"
+                        className="bg-ic-darkBg3 border border-ic-darkBg4 text-ic-textWhite hover:bg-ic-darkBg4 hover:border-ic-cyan/50 text-sm font-medium py-2 px-3 rounded-lg text-left shadow-sm transition-colors"
                       >
                         {opt.label}
                       </button>
@@ -524,10 +531,10 @@ export const ICAssist: React.FC<{
           </div>
 
           {/* Input Area */}
-          <div className="p-4 bg-white border-t shrink-0">
+          <div className="p-4 bg-ic-darkBg2 border-t border-ic-darkBg4 shrink-0">
              <div className="flex gap-2 relative">
                 <input
-                  className="flex-grow border rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-ic-blue outline-none disabled:bg-gray-100 disabled:text-gray-400"
+                  className="flex-grow border border-ic-darkBg4 bg-ic-darkBg3 text-ic-textWhite rounded-full px-4 py-2 text-sm focus:ring-2 focus:ring-ic-cyan outline-none disabled:bg-ic-darkBg4 disabled:text-ic-textDim placeholder:text-ic-textDim"
                   placeholder={mode === 'QNA' ? "Type your question..." : "Select an option above"}
                   value={input}
                   onChange={e => setInput(e.target.value)}
@@ -537,7 +544,7 @@ export const ICAssist: React.FC<{
                 <button
                   onClick={handleSendInput}
                   disabled={mode !== 'QNA' || !input.trim()}
-                  className="bg-ic-blue text-white p-2 rounded-full hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                  className="bg-ic-cyan text-ic-darkBg p-2 rounded-full hover:bg-ic-cyanLight disabled:bg-ic-darkBg4 disabled:text-ic-textDim disabled:cursor-not-allowed transition-colors"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
                 </button>
@@ -592,7 +599,7 @@ export const AuthWizard: React.FC<{ onAuthenticated: (user: User) => void }> = (
 
   return (
     <div className="p-2">
-      <h2 className="text-2xl font-bold mb-6 text-center text-ic-blue">Login to Innovation City Portal</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center text-ic-textWhite">Login to Innovation City Portal</h2>
 
       {step === 1 ? (
         <>
@@ -606,16 +613,16 @@ export const AuthWizard: React.FC<{ onAuthenticated: (user: User) => void }> = (
           />
           <Button fullWidth onClick={handleSendOTP} className="mt-2">Get OTP</Button>
 
-          <div className="mt-6 text-center pt-4 border-t">
-            <p className="text-sm text-gray-500 mb-2">For Testing Purposes:</p>
-            <button onClick={handleDemoLogin} className="text-xs text-ic-blue underline">
+          <div className="mt-6 text-center pt-4 border-t border-ic-darkBg4">
+            <p className="text-sm text-ic-textMuted mb-2">For Testing Purposes:</p>
+            <button onClick={handleDemoLogin} className="text-xs text-ic-cyan underline">
               (Demo Only) Login as Admin
             </button>
           </div>
         </>
       ) : (
         <>
-          <div className="mb-4 bg-blue-50 p-3 rounded text-sm text-blue-800">
+          <div className="mb-4 bg-ic-cyan/10 border border-ic-cyan text-ic-textWhite p-3 rounded text-sm">
             OTP sent to {mobile}. Use <strong>1234</strong> for testing.
           </div>
           <Input
@@ -629,7 +636,7 @@ export const AuthWizard: React.FC<{ onAuthenticated: (user: User) => void }> = (
           <Button fullWidth onClick={handleVerifyOTP} className="mt-2">Verify & Login</Button>
           <button
             onClick={() => setStep(1)}
-            className="w-full text-center mt-4 text-sm text-gray-500 hover:text-ic-blue"
+            className="w-full text-center mt-4 text-sm text-ic-textMuted hover:text-ic-cyan"
           >
             Change Mobile Number
           </button>
@@ -670,13 +677,13 @@ export const FileRequestView: React.FC<{ onSubmit: (data: any) => void; initialD
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-6 text-ic-dark">Raise a New Request</h2>
+      <h2 className="text-2xl font-bold mb-6 text-ic-textWhite">Raise a New Request</h2>
       {initialData && (
-        <div className="bg-blue-50 border border-blue-200 text-blue-800 px-4 py-3 rounded mb-6 text-sm flex items-center gap-2">
+        <div className="bg-ic-cyan/10 border-l-4 border-ic-cyan text-ic-textWhite px-4 py-3 rounded mb-6 text-sm flex items-center gap-2">
           <span>Form pre-filled from IC Assist chat. Please review and add location details.</span>
         </div>
       )}
-      <Card>
+      <Card className="bg-ic-darkBg2 border border-ic-darkBg4">
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             label="Request Subject"
@@ -723,10 +730,10 @@ export const FileRequestView: React.FC<{ onSubmit: (data: any) => void; initialD
           />
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">Attach Photos/Documents (Optional)</label>
+            <label className="block text-sm font-semibold text-ic-textWhite mb-1">Attach Photos/Documents (Optional)</label>
             <input
               type="file"
-              className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-ic-blue hover:file:bg-blue-100"
+              className="w-full text-sm text-ic-textMuted file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-ic-cyan/20 file:text-ic-cyan hover:file:bg-ic-cyan/30"
               onChange={e => setFormData({...formData, files: e.target.files})}
             />
           </div>
@@ -737,9 +744,9 @@ export const FileRequestView: React.FC<{ onSubmit: (data: any) => void; initialD
               id="anon"
               checked={formData.isAnonymized}
               onChange={e => setFormData({...formData, isAnonymized: e.target.checked})}
-              className="w-4 h-4 text-ic-blue rounded focus:ring-ic-blue"
+              className="w-4 h-4 text-ic-cyan rounded focus:ring-ic-cyan"
             />
-            <label htmlFor="anon" className="text-sm text-gray-700">Submit this request anonymously</label>
+            <label htmlFor="anon" className="text-sm text-ic-textWhite">Submit this request anonymously</label>
           </div>
 
           <div className="pt-4">
@@ -786,33 +793,33 @@ export const TrackRequestsView: React.FC<{
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-4xl mx-auto px-4 py-8 bg-gradient-to-br from-ic-darkBg to-ic-darkBg2 min-h-screen">
       <div className="mb-6 flex items-center">
-         <Button variant="ghost" className="pl-0 text-gray-600 hover:text-ic-blue" onClick={onBackToDashboard}>
+         <Button variant="ghost" className="pl-0 text-ic-textMuted hover:text-ic-cyan" onClick={onBackToDashboard}>
             &larr; Back to Dashboard
          </Button>
       </div>
-      <h2 className="text-2xl font-bold mb-6 text-ic-dark">My Requests</h2>
+      <h2 className="text-2xl font-bold mb-6 text-ic-textWhite">My Requests</h2>
 
       {requests.length === 0 ? (
-        <div className="text-center py-12 bg-white rounded-lg shadow">
-          <p className="text-gray-500">No requests found.</p>
+        <div className="text-center py-12 bg-ic-darkBg2 rounded-lg shadow border border-ic-darkBg4">
+          <p className="text-ic-textMuted">No requests found.</p>
         </div>
       ) : (
         <div className="space-y-4">
           {requests.map(g => (
-            <Card key={g.id} onClick={() => onViewDetails(g)} className="cursor-pointer hover:border-ic-blue transition-all">
+            <Card key={g.id} onClick={() => onViewDetails(g)} className="cursor-pointer hover:border-ic-cyan/50 transition-all bg-ic-darkBg2 border border-ic-darkBg4">
               <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-mono bg-gray-100 px-2 py-0.5 rounded text-gray-600">{g.id}</span>
-                    <span className="text-xs text-gray-500">{new Date(g.dateFiled).toLocaleDateString()}</span>
+                    <span className="text-xs font-mono bg-ic-darkBg3 px-2 py-0.5 rounded text-ic-textMuted">{g.id}</span>
+                    <span className="text-xs text-ic-textMuted">{new Date(g.dateFiled).toLocaleDateString()}</span>
                   </div>
-                  <h3 className="font-bold text-lg text-ic-dark">{g.subject}</h3>
+                  <h3 className="font-bold text-lg text-ic-textWhite">{g.subject}</h3>
                 </div>
                 <div className="flex items-center justify-between md:justify-end w-full md:w-auto gap-4">
                    <Badge type={getStatusColor(g.status)}>{g.status}</Badge>
-                   <span className="text-ic-blue text-sm font-medium">View Details &rarr;</span>
+                   <span className="text-ic-cyan text-sm font-medium">View Details &rarr;</span>
                 </div>
               </div>
             </Card>
@@ -838,18 +845,18 @@ export const RequestDetailsView: React.FC<{
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <Button variant="ghost" onClick={onBack} className="mb-4 pl-0">
+    <div className="max-w-4xl mx-auto px-4 py-8 bg-gradient-to-br from-ic-darkBg to-ic-darkBg2 min-h-screen">
+      <Button variant="ghost" onClick={onBack} className="mb-4 pl-0 text-ic-textMuted hover:text-ic-cyan">
         &larr; Back to List
       </Button>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2 space-y-6">
-          <Card>
+          <Card className="bg-ic-darkBg2 border border-ic-darkBg4">
             <div className="flex justify-between items-start mb-4">
               <div>
-                <h1 className="text-2xl font-bold text-ic-dark mb-1">{request.subject}</h1>
-                <p className="text-sm text-gray-500">Filed on {new Date(request.dateFiled).toLocaleDateString()} • ID: {request.id}</p>
+                <h1 className="text-2xl font-bold text-ic-textWhite mb-1">{request.subject}</h1>
+                <p className="text-sm text-ic-textMuted">Filed on {new Date(request.dateFiled).toLocaleDateString()} • ID: {request.id}</p>
               </div>
               <Badge type={
                 request.status === RequestStatus.CLOSED ? 'success' :
@@ -861,69 +868,73 @@ export const RequestDetailsView: React.FC<{
 
             {/* Dynamic Status Details */}
             {request.status === RequestStatus.UNDER_REVIEW && (
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                <h4 className="text-sm font-bold text-yellow-800 uppercase mb-1">Current Status</h4>
-                <p className="text-sm text-yellow-900">Your request is currently under review.</p>
+              <div className="bg-ic-darkBg3 border-l-4 border-ic-cyan p-4 mb-6">
+                <h4 className="text-sm font-bold text-ic-textWhite uppercase mb-1">Current Status</h4>
+                <p className="text-sm text-ic-textMuted">Your request is currently under review.</p>
                 {request.assignedTo && (
-                  <div className="mt-2 pt-2 border-t border-yellow-200">
-                    <p className="text-xs font-semibold text-yellow-800">Assigned To:</p>
-                    <p className="text-sm font-medium text-ic-dark">{request.assignedTo}</p>
+                  <div className="mt-2 pt-2 border-t border-ic-darkBg4">
+                    <p className="text-xs font-semibold text-ic-textMuted">Assigned To:</p>
+                    <p className="text-sm font-medium text-ic-textWhite">{request.assignedTo}</p>
                   </div>
                 )}
               </div>
             )}
 
             {request.status === RequestStatus.CLOSED && (
-               <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-6">
-                <h4 className="text-sm font-bold text-green-800 uppercase mb-1">Case Closed</h4>
+               <div className="bg-ic-darkBg3 border-l-4 border-ic-cyan p-4 mb-6">
+                <h4 className="text-sm font-bold text-ic-textWhite uppercase mb-1">Case Closed</h4>
                 {request.resolution && (
                    <div className="mb-3">
-                     <p className="text-xs font-semibold text-green-800">Final Resolution:</p>
-                     <p className="text-sm text-gray-800 italic">"{request.resolution}"</p>
+                     <p className="text-xs font-semibold text-ic-textMuted">Final Resolution:</p>
+                     <p className="text-sm text-ic-textWhite italic">"{request.resolution}"</p>
                    </div>
                 )}
                 {request.closingOfficer && (
-                  <div className="pt-2 border-t border-green-200">
-                    <p className="text-xs font-semibold text-green-800">Closed By:</p>
-                    <p className="text-sm font-medium text-ic-dark">{request.closingOfficer}</p>
+                  <div className="pt-2 border-t border-ic-darkBg4">
+                    <p className="text-xs font-semibold text-ic-textMuted">Closed By:</p>
+                    <p className="text-sm font-medium text-ic-textWhite">{request.closingOfficer}</p>
                   </div>
                 )}
               </div>
             )}
 
-            <div className="prose max-w-none">
-              <h3 className="text-lg font-semibold mb-2">Description</h3>
-              <p className="text-gray-700 whitespace-pre-wrap mb-4">{request.description}</p>
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-ic-textWhite">Description</h3>
+                <p className="text-ic-textMuted whitespace-pre-wrap mb-4">{request.description}</p>
+              </div>
 
-              <h3 className="text-lg font-semibold mb-2">Details</h3>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div><span className="font-semibold">Office Location:</span> {request.officeLocation}</div>
-                <div><span className="font-semibold">Category:</span> {request.category}</div>
-                <div><span className="font-semibold">Location:</span> {request.location}</div>
+              <div>
+                <h3 className="text-lg font-semibold mb-2 text-ic-textWhite">Details</h3>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div><span className="font-semibold text-ic-textWhite">Office Location:</span> <span className="text-ic-textMuted">{request.officeLocation}</span></div>
+                  <div><span className="font-semibold text-ic-textWhite">Category:</span> <span className="text-ic-textMuted">{request.category}</span></div>
+                  <div><span className="font-semibold text-ic-textWhite">Location:</span> <span className="text-ic-textMuted">{request.location}</span></div>
+                </div>
               </div>
             </div>
           </Card>
 
-          <Card>
-            <h3 className="text-lg font-semibold mb-4">Discussion & Updates</h3>
+          <Card className="bg-ic-darkBg2 border border-ic-darkBg4">
+            <h3 className="text-lg font-semibold mb-4 text-ic-textWhite">Discussion & Updates</h3>
             <div className="space-y-4 mb-6 max-h-60 overflow-y-auto">
               {request.replies.length === 0 ? (
-                <p className="text-gray-500 text-sm text-center italic">No remarks yet.</p>
+                <p className="text-ic-textMuted text-sm text-center italic">No remarks yet.</p>
               ) : (
                 request.replies.map((reply, idx) => (
-                  <div key={idx} className={`p-3 rounded ${reply.author === 'You' ? 'bg-blue-50 ml-8' : 'bg-gray-50 mr-8'}`}>
-                    <div className="flex justify-between text-xs text-gray-500 mb-1">
-                      <span className="font-bold">{reply.author}</span>
+                  <div key={idx} className={`p-3 rounded ${reply.author === 'You' ? 'bg-ic-cyan/20 ml-8' : 'bg-ic-darkBg3 mr-8 border border-ic-darkBg4'}`}>
+                    <div className="flex justify-between text-xs text-ic-textMuted mb-1">
+                      <span className="font-bold text-ic-textWhite">{reply.author}</span>
                       <span>{new Date(reply.date).toLocaleDateString()}</span>
                     </div>
-                    <p className="text-sm text-gray-800">{reply.message}</p>
+                    <p className="text-sm text-ic-textWhite">{reply.message}</p>
                   </div>
                 ))
               )}
             </div>
             <div className="flex gap-2">
               <input
-                className="flex-grow border rounded px-3 py-2 text-sm focus:ring-2 focus:ring-ic-blue outline-none"
+                className="flex-grow border border-ic-darkBg4 bg-ic-darkBg3 text-ic-textWhite rounded px-3 py-2 text-sm focus:ring-2 focus:ring-ic-cyan outline-none placeholder:text-ic-textDim"
                 placeholder="Add a remark or query..."
                 value={replyText}
                 onChange={e => setReplyText(e.target.value)}
@@ -934,17 +945,17 @@ export const RequestDetailsView: React.FC<{
         </div>
 
         <div className="space-y-6">
-          <Card>
-            <h3 className="text-lg font-semibold mb-4">Timeline</h3>
-            <div className="relative border-l-2 border-gray-200 ml-3 space-y-6">
+          <Card className="bg-ic-darkBg2 border border-ic-darkBg4">
+            <h3 className="text-lg font-semibold mb-4 text-ic-textWhite">Timeline</h3>
+            <div className="relative border-l-2 border-ic-darkBg4 ml-3 space-y-6">
               {request.timeline.map((event, idx) => (
                 <div key={idx} className="relative pl-6">
                   <span className={`absolute -left-[9px] top-1 w-4 h-4 rounded-full border-2 ${
-                    event.status === 'completed' ? 'bg-ic-success border-ic-success' :
-                    event.status === 'current' ? 'bg-white border-ic-accent' : 'bg-gray-200 border-gray-300'
+                    event.status === 'completed' ? 'bg-ic-cyan border-ic-cyan' :
+                    event.status === 'current' ? 'bg-ic-darkBg2 border-ic-cyan' : 'bg-ic-darkBg3 border-ic-darkBg4'
                   }`}></span>
-                  <p className="font-medium text-sm">{event.label}</p>
-                  <p className="text-xs text-gray-500">{new Date(event.date).toLocaleDateString()}</p>
+                  <p className="font-medium text-sm text-ic-textWhite">{event.label}</p>
+                  <p className="text-xs text-ic-textMuted">{new Date(event.date).toLocaleDateString()}</p>
                 </div>
               ))}
             </div>
@@ -958,29 +969,29 @@ export const RequestDetailsView: React.FC<{
 // --- Admin Dashboard (Innovation City Request Control Panel) ---
 export const AdminDashboard: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6">Innovation City Request Control Panel</h1>
-      <p className="text-gray-600 mb-6">Admin Dashboard - Innovation City Teams</p>
+    <div className="max-w-7xl mx-auto px-4 py-8 bg-gradient-to-br from-ic-darkBg to-ic-darkBg2 min-h-screen">
+      <h1 className="text-3xl font-bold mb-2 text-ic-textWhite">Innovation City Request Control Panel</h1>
+      <p className="text-ic-textMuted mb-6">Admin Dashboard - Innovation City Teams</p>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <Card className="border-l-4 border-blue-500">
-           <h3 className="text-gray-500 text-sm">Total Requests</h3>
-           <p className="text-2xl font-bold">142</p>
+        <Card className="border-l-4 border-ic-cyan bg-ic-darkBg2 border border-ic-darkBg4">
+           <h3 className="text-ic-textMuted text-sm">Total Requests</h3>
+           <p className="text-2xl font-bold text-ic-textWhite">142</p>
         </Card>
-        <Card className="border-l-4 border-yellow-500">
-           <h3 className="text-gray-500 text-sm">Pending (Normal)</h3>
-           <p className="text-2xl font-bold">28</p>
+        <Card className="border-l-4 border-ic-cyan bg-ic-darkBg2 border border-ic-darkBg4">
+           <h3 className="text-ic-textMuted text-sm">Pending (Normal)</h3>
+           <p className="text-2xl font-bold text-ic-textWhite">28</p>
         </Card>
-        <Card className="border-l-4 border-orange-500">
-           <h3 className="text-gray-500 text-sm">Important</h3>
-           <p className="text-2xl font-bold">8</p>
+        <Card className="border-l-4 border-ic-cyan bg-ic-darkBg2 border border-ic-darkBg4">
+           <h3 className="text-ic-textMuted text-sm">Important</h3>
+           <p className="text-2xl font-bold text-ic-textWhite">8</p>
         </Card>
-        <Card className="border-l-4 border-red-500">
-           <h3 className="text-gray-500 text-sm">Urgent</h3>
-           <p className="text-2xl font-bold">3</p>
+        <Card className="border-l-4 border-ic-cyan bg-ic-darkBg2 border border-ic-darkBg4">
+           <h3 className="text-ic-textMuted text-sm">Urgent</h3>
+           <p className="text-2xl font-bold text-ic-textWhite">3</p>
         </Card>
       </div>
-      <Card>
-        <p className="text-center text-gray-500 py-10">Select a request to view details and take action.</p>
+      <Card className="bg-ic-darkBg2 border border-ic-darkBg4">
+        <p className="text-center text-ic-textMuted py-10">Select a request to view details and take action.</p>
       </Card>
     </div>
   );
