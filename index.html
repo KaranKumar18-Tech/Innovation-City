@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IC Portal – Innovation City Internal Requests</title>
+    <meta name="description" content="Innovation City internal request portal for employees to raise and track workplace requests." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Noto Sans"', 'sans-serif'],
+            },
+            colors: {
+              ic: {
+                blue: '#0F2D5C',
+                lightBlue: '#EFF6FF',
+                accent: '#0EA5E9',
+                dark: '#1E293B',
+                success: '#16A34A',
+                warning: '#D97706',
+                danger: '#DC2626',
+                green: '#166534',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Accessibility improvements */
+      *:focus-visible {
+        outline: 3px solid #0EA5E9;
+        outline-offset: 2px;
+      }
+      body {
+        background-color: #F9FAFB;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
